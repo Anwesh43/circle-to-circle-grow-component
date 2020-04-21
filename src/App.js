@@ -1,24 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import {useDimension, useAnimatedScale} from './hooks'
+import CircleToCircleGrowComponent from './CircleToCircleGrowComponent'
 function App() {
+  const {resize, w, h} = useDimension()
+  const {scale, start} = useAnimatedScale(0.02, 30)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CircleToCircleGrowComponent w = {w} h = {h} scale = {scale}/>
     </div>
   );
 }
