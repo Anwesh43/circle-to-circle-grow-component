@@ -5,10 +5,10 @@ import {useDimension, useAnimatedScale} from './hooks'
 import CircleToCircleGrowComponent from './CircleToCircleGrowComponent'
 function App() {
   const {resize, w, h} = useDimension()
-  const {scale, start} = useAnimatedScale(0.02, 30)
+  const {scale, start} = useAnimatedScale(0.02 / 3, 30)
   return (
     <div className="App">
-      <CircleToCircleGrowComponent w = {w} h = {h} scale = {scale}/>
+      <CircleToCircleGrowComponent w = {w} h = {h} scale = {scale} onClick = {start}/>
     </div>
   );
 }
